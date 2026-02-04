@@ -1,0 +1,36 @@
+{
+  "name": "skillmint",
+  "version": "1.0.0",
+  "description": "Monetize OpenClaw skills with USDC micropayments via Circle",
+  "main": "dist/index.js",
+  "bin": {
+    "skillmint": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node src/cli.ts",
+    "test": "jest"
+  },
+  "keywords": [
+    "openclaw",
+    "usdc",
+    "circle",
+    "micropayments",
+    "skills",
+    "monetization"
+  ],
+  "author": "FurryFlasher",
+  "license": "MIT",
+  "dependencies": {
+    "@circle-fin/developer-controlled-wallets": "^2.0.0",
+    "chalk": "^4.1.2",
+    "commander": "^11.0.0",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/uuid": "^9.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
