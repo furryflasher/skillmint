@@ -21,13 +21,21 @@ SkillMint creates a **skill economy**:
 
 ## 🚀 Quick Start
 
+### Prerequisites
+
+```bash
+# First, set up Circle wallet (required)
+clawhub install circle-wallet
+circle-wallet setup --api-key YOUR_CIRCLE_API_KEY
+```
+
 ### For Skill Creators
 
 ```bash
-# Register your skill with a price
+# Register your skill with a price (creates real Circle wallet)
 node skillmint.js register my-awesome-skill 0.01
 
-# Check your earnings
+# Check your earnings (shows live balances)
 node skillmint.js earnings
 
 # View all your registered skills
@@ -37,10 +45,13 @@ node skillmint.js skills
 ### For Skill Users
 
 ```bash
-# Set up your wallet
-node skillmint.js fund 10
+# Set up your wallet (creates real Circle wallet)
+node skillmint.js fund
 
-# Check your balance
+# Get testnet USDC (sandbox only)
+node skillmint.js drip
+
+# Check your live balance
 node skillmint.js balance
 
 # View your usage history
@@ -112,10 +123,11 @@ skillmint skill <name>     # View skill details
 
 ## 🔗 Built With
 
-- **Circle Developer Controlled Wallets** — Programmatic wallet management
-- **Circle CCTP** — Cross-chain USDC transfers
-- **Circle Gas Station** — Sponsored gas fees
+- **Circle Developer Controlled Wallets** — Programmatic wallet management (fully integrated!)
+- **@circle-fin/developer-controlled-wallets** — Official Circle SDK
+- **Circle Gas Station** — Sponsored gas fees (SCA wallets)
 - **OpenClaw** — AI agent framework
+- **ARC-TESTNET** — Default testnet chain (configurable)
 
 ## 📁 Project Structure
 
@@ -141,7 +153,9 @@ skillmint/
 - [x] Skill registration and management
 - [x] Usage tracking and analytics
 - [x] Earnings reports
-- [ ] Real Circle DCW integration
+- [x] **Real Circle DCW integration** ✅
+- [x] Live wallet balance checking
+- [x] Real USDC transfers on skill calls
 - [ ] CCTP cross-chain payments
 - [ ] Subscription model
 - [ ] ClawHub marketplace integration
